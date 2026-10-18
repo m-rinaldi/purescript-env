@@ -97,9 +97,6 @@ jobs:
             exit 1
           fi
 
-      # Until `node-process` is released with `loadEnvFile` and spago.yaml depends on that
-      # release instead of the git pin, `spago publish` refuses: the registry takes no git
-      # dependency. Run the workflow with dry_run ticked until then.
       - name: Publish to the PureScript Registry
         if: github.event_name == 'push' || inputs.dry_run == false
         run: npx spago publish

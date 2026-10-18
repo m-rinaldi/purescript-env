@@ -15,7 +15,9 @@
             "integers",
             "lists",
             "maybe",
-            "node-process",
+            {
+              "node-process": ">=11.3.0 <12.0.0"
+            },
             "numbers",
             "prelude",
             "record",
@@ -690,23 +692,7 @@
       }
     },
     "extra_packages": {
-      "node-process": {
-        "git": "https://github.com/m-rinaldi/purescript-node-process.git",
-        "ref": "95f52582035dd446c21293fdcd644ac407057566",
-        "dependencies": [
-          "effect",
-          "exceptions",
-          "foreign",
-          "foreign-object",
-          "maybe",
-          "node-event-emitter",
-          "node-streams",
-          "nullable",
-          "posix-types",
-          "prelude",
-          "strings"
-        ]
-      }
+      "node-process": "11.3.0"
     }
   },
   "packages": {
@@ -1285,9 +1271,9 @@
       ]
     },
     "node-process": {
-      "type": "git",
-      "url": "https://github.com/m-rinaldi/purescript-node-process.git",
-      "rev": "95f52582035dd446c21293fdcd644ac407057566",
+      "type": "registry",
+      "version": "11.3.0",
+      "integrity": "sha256-TgIRNRsFrvRkBW6Uoc4cRqWOGamXnFLqGGbPvyQfaYI=",
       "dependencies": [
         "effect",
         "exceptions",

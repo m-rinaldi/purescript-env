@@ -17,7 +17,7 @@ package:
     - integers
     - lists
     - maybe
-    - node-process
+    - node-process: ">=11.3.0 <12.0.0"
     - numbers
     - prelude
     - record
@@ -35,22 +35,6 @@ workspace:
   packageSet:
     registry: 81.1.0
   extraPackages:
-    # `node-process` with `loadEnvFile` (purescript-node/purescript-node-process#47, branch
-    # add-load-env-file of the fork): the binding for Node's own `process.loadEnvFile`, which
-    # `Env.Dot` loads the file with. Once the pull request is merged and released, drop this
-    # entry; until then the package cannot go to the registry, which takes no git dependency.
-    node-process:
-      git: https://github.com/m-rinaldi/purescript-node-process.git
-      ref: 95f52582035dd446c21293fdcd644ac407057566
-      dependencies:
-        - effect
-        - exceptions
-        - foreign
-        - foreign-object
-        - maybe
-        - node-event-emitter
-        - node-streams
-        - nullable
-        - posix-types
-        - prelude
-        - strings
+    # `node-process` 11.3.0 is the release with `loadEnvFile` (purescript-node/purescript-node-process#47),
+    # newer than the package set's 11.2.0. Drop this entry once a package set carries it.
+    node-process: 11.3.0
