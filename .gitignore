@@ -1,0 +1,6 @@
+.spago
+output
+node_modules
+.psci_modules
+.psc-ide-port
+.spec-results

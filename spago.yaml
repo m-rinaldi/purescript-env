@@ -1,0 +1,56 @@
+package:
+  name: env
+  publish:
+    version: 0.1.0
+    license: MIT
+    location:
+      githubOwner: m-rinaldi
+      githubRepo: purescript-env
+  dependencies:
+    - bifunctors
+    - effect
+    - either
+    - exceptions
+    - foldable-traversable
+    - foreign
+    - foreign-object
+    - integers
+    - lists
+    - maybe
+    - node-process
+    - numbers
+    - prelude
+    - record
+    - strings
+    - transformers
+    - typelevel-prelude
+  test:
+    main: Test.Env.Main
+    dependencies:
+      - aff
+      - spec
+      - spec-node
+
+workspace:
+  packageSet:
+    registry: 81.1.0
+  extraPackages:
+    # `node-process` with `loadEnvFile` (purescript-node/purescript-node-process#47, branch
+    # add-load-env-file of the fork): the binding for Node's own `process.loadEnvFile`, which
+    # `Env.Dot` loads the file with. Once the pull request is merged and released, drop this
+    # entry; until then the package cannot go to the registry, which takes no git dependency.
+    node-process:
+      git: https://github.com/m-rinaldi/purescript-node-process.git
+      ref: 95f52582035dd446c21293fdcd644ac407057566
+      dependencies:
+        - effect
+        - exceptions
+        - foreign
+        - foreign-object
+        - maybe
+        - node-event-emitter
+        - node-streams
+        - nullable
+        - posix-types
+        - prelude
+        - strings
